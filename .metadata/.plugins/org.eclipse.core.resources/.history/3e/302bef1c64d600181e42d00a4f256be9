@@ -1,0 +1,25 @@
+package com.org.main;
+
+public class UdpBrGtMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DatagramPacket receive = new DatagramPacket(new byte[1024], 1024);
+		DatagramSocket server = new DatagramSocket(8888);
+		 
+		System.out.println("---------------------------------");
+		System.out.println("Server current start......");
+		System.out.println("---------------------------------");
+		 
+		while (true)
+		{
+		server.receive(receive);
+		 
+		byte[] recvByte = Arrays.copyOfRange(receive.getData(), 0,
+		receive.getLength());
+		 
+		System.out.println("Server receive msg:" + new String(recvByte));
+		}
+	}
+
+}
