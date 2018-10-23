@@ -14,6 +14,11 @@ public class MultiMainSd {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		/*
+		 * 通过不断修改host后面的116.8.0这三个字节
+		 * 经过ip协议,换算出mac码,在另一端(特指路由器,不是接受端,接收端是应用层是无法获取的)
+		 * 网络层即可以获取上面传递的三个字节的信息,解析这个三个字节即可以得到一定的信息;
+		 * */
 		String host = "224.116.8.0";
 		int port = 2011;
 		Timer t = new Timer();
